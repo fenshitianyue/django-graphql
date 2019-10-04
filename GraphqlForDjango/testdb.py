@@ -71,7 +71,7 @@ def get_comment(request):
     List = UserComment.objects.all()
     response = ""
     for var in List:
-        response += var.user.name + " | " + str(var.pushed_at)[0:-13] + " | " + var.comment.data + "<br>"
+        response += var.user.name + " | " + str(var.pushed_at)[0:-7] + " | " + var.comment.data + "<br>"
     return HttpResponse("<p>" + response + "</p>")
 
 
