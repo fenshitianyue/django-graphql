@@ -21,4 +21,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^register_form/$', testdb.register_form),
     url(r'^register/$', testdb.register),
+    url(r'^get_user/$', testdb.get_user),
 ]
