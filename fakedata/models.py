@@ -23,6 +23,7 @@ class UserComment(models.Model):
     comment = models.ForeignKey(Comment, on_delete=models.CASCADE)
     # 添加其他字段
     # pushed_at = models.DateTimeField(default=datetime.datetime.now())
+    # TODO:这里以后再做的时候换成上面那行代码，因为timezone.now是带着时区限制的，而django默认时区是美国那边
     pushed_at = models.DateTimeField(default=timezone.now)
 
     # 使用自定义的名称
