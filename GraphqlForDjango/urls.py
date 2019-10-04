@@ -22,4 +22,7 @@ urlpatterns = [
     url(r'^register_form/$', testdb.register_form),
     url(r'^register/$', testdb.register),
     url(r'^get_user/$', testdb.get_user),
+    url(r'^comment_form/$', testdb.push_comment_form),
+    url(r'^comment/$', testdb.push_comment),
+    url(r'^get_comment/$', testdb.get_comment),
 ]
