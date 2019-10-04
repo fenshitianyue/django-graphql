@@ -9,6 +9,7 @@ from django.utils import timezone
 
 class User(models.Model):
     name = models.CharField(max_length=20)  # 用户名
+    password = models.CharField(max_length=20)  # 密码
     email = models.EmailField()  # email
     register_date = models.DateField()  # 注册时间：YYYY-MM-DD
 
