@@ -26,9 +26,32 @@ class Query(graphene.ObjectType):
         return Users.objects.get(name=pk)
 
 # 添加
+class CreateUser(graphene.Mutation):
+    class Input:
+        Name = graphene.String()
+        Title = graphene.String()
+        Content = graphene.String()
+        # pushed_at =
+    info = graphene.Field(UserType)
+    ok = graphene.Boolean()
+
+    def mutate(self, info, **kwargs):
+        user_obj = Users(name=kwargs['Name'], title=kwargs['Title'], content=kwargs['Content'])
+        try:
+            user_obj.save()
+            ok = True
+        except Exception as e:
+            print e
+            ok = False
+        return CreateUser(ok=ok, info=user_obj)
+
+class Mutation(graphene.ObjectType):
+    create_user = CreateUser.Field()
+
+
 # 修改
 # 删除
 
-schema = graphene.Schema(query=Query)
+schema = graphene.Schema(query=Query, mutation=Mutation)
 
 
