@@ -26,5 +26,5 @@ urlpatterns = [
     url(r'^comment_form/$', testdb.push_comment_form),
     url(r'^comment/$', testdb.push_comment),
     url(r'^get_comment/$', testdb.get_comment),
-    url(r'^graphql/&', GraphQLView.as_view(graphiql=True)),
+    url(r'^graphql/$', GraphQLView.as_view(graphiql=True)),
 ]
