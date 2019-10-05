@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',  # required for graphiql
     'fakedata',
     'graphene_django',
+    'mygraphdata',
 ]
 
 GRAPHENE = {
