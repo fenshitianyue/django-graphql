@@ -16,6 +16,7 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from . import testdb
+from graphene_django.views import GraphQLView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -25,4 +26,5 @@ urlpatterns = [
     url(r'^comment_form/$', testdb.push_comment_form),
     url(r'^comment/$', testdb.push_comment),
     url(r'^get_comment/$', testdb.get_comment),
+    url(r'^graphql/&', GraphQLView.as_view(graphiql=True)),
 ]
